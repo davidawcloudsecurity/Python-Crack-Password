@@ -13,7 +13,7 @@ chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!$%&'()*+
 
 password = input("Enter Password: ")
 # store starting time
-begin = time.time()
+start = time.perf_counter()
   
 # program body starts
 while keep_going:
@@ -24,7 +24,7 @@ while keep_going:
 	    print("Cracked Password: " + "".join(guess_password))
 	    time.sleep(1)
 	    # store end time
-	    end = time.time()
+	    end = time.perf_counter()
 	    # total time taken
-	    print(f"Total runtime of the program is {end - begin} s")
+	    print(f"Total runtime of the program is {end - start} s")
 	    keep_going = False
