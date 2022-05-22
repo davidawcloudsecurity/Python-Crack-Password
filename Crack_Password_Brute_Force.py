@@ -1,5 +1,5 @@
 import random
-import time
+from timeit import default_timer as timer
 
 #courtesy of https://github.com/MustafaTheCoder
 
@@ -13,7 +13,7 @@ chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!$%&'()*+
 
 password = input("Enter Password: ")
 # store starting time
-start = time.perf_counter()
+start = timer()
   
 # program body starts
 while keep_going:
@@ -22,9 +22,6 @@ while keep_going:
     
     if guess_password == list(password):
 	    print("Cracked Password: " + "".join(guess_password))
-	    time.sleep(1)
-	    # store end time
-	    end = time.perf_counter()
 	    # total time taken
-	    print(f"Total runtime of the program is {end - start} s")
+	    print(f"Total runtime of the program is {timer()-start} s")
 	    keep_going = False
